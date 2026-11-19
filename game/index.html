@@ -3,16 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Block Dodger</title>
-<style>
-  html, body { margin: 0; height: 100%; overflow: hidden; background: #11141b; }
-  #game { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
-  /* Read aloud, never shown: the status line screen readers announce. */
-  #status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-</style>
+<title>Solmar Bay — an open-world crime game</title>
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<canvas id="game" aria-label="Block Dodger: move the paddle left and right to dodge falling blocks and catch coins"></canvas>
+<canvas id="game" width="1280" height="800" aria-label="Solmar Bay: drive, steal cars, outrun the police and finish Mara's jobs"></canvas>
+<div id="hud" class="hidden">
+  <div id="hud-top-left">
+    <div id="cash">$0</div>
+    <div id="healthbar"><div id="healthfill"></div></div>
+    <div id="wanted"></div>
+  </div>
+  <div id="objective"><div id="mission-title"></div><div id="mission-text"></div></div>
+  <div id="hud-bottom-left"><div id="speed">0 mph</div><div id="hint">E enter / exit car &nbsp;·&nbsp; click shoot &nbsp;·&nbsp; P pause &nbsp;·&nbsp; M mute</div></div>
+  <div id="toast"></div>
+</div>
+<div id="title-screen">
+  <div class="panel">
+    <h1>SOLMAR BAY</h1>
+    <p class="tagline">A sun-soaked city. A debt to pay. Five jobs between you and freedom.</p>
+    <p class="story">You are <b>Rook</b>, new in Solmar Bay with nothing but a borrowed jacket and a
+    $40,000 debt to the Gull syndicate. <b>Mara Voss</b> runs the jobs now: pickups, drops,
+    stolen cars and cash runs — and the Bay City Police will not look the other way.
+    Steal a car, lose the heat, finish all five jobs, and the debt is gone.</p>
+    <div class="controls">
+      <span><b>W A S D</b> move / drive</span>
+      <span><b>Mouse + click</b> aim &amp; shoot</span>
+      <span><b>E</b> enter / exit car</span>
+      <span><b>Shift</b> sprint / boost</span>
+      <span><b>P</b> pause &amp; save</span>
+    </div>
+    <button id="start-btn">START ENGINE</button>
+    <button id="continue-btn" class="hidden">CONTINUE SAVED GAME</button>
+    <p class="fine">Original game. No network needed — everything runs from these files.</p>
+  </div>
+</div>
+<div id="pause-screen" class="hidden">
+  <div class="panel">
+    <h2>PAUSED</h2>
+    <p id="pause-info"></p>
+    <button id="resume-btn">RESUME</button>
+    <button id="save-btn">SAVE GAME</button>
+    <button id="restart-btn">RESTART STORY</button>
+  </div>
+</div>
+<div id="end-screen" class="hidden">
+  <div class="panel">
+    <h2 id="end-title"></h2>
+    <p id="end-text"></p>
+    <button id="again-btn">PLAY AGAIN</button>
+  </div>
+</div>
 <p id="status" role="status" aria-live="polite"></p>
 <script type="module" src="./src/main.js"></script>
 </body>

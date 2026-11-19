@@ -1,0 +1,29 @@
+html, body { margin: 0; height: 100%; overflow: hidden; background: #0e1420; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+#game { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+.hidden { display: none !important; }
+#status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+#hud { position: fixed; inset: 0; pointer-events: none; color: #fff; }
+#hud-top-left { position: absolute; top: 14px; left: 16px; }
+#cash { font-size: 30px; font-weight: 800; color: #7dff9b; text-shadow: 0 2px 6px #000; }
+#healthbar { width: 180px; height: 12px; background: rgba(0,0,0,.55); border: 1px solid #fff3; margin-top: 6px; }
+#healthfill { height: 100%; width: 100%; background: linear-gradient(90deg, #ff5b4d, #ffb84d); }
+#wanted { font-size: 26px; letter-spacing: 4px; margin-top: 6px; text-shadow: 0 2px 6px #000; }
+#objective { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); text-align: center; background: rgba(8,12,22,.72); border: 1px solid #ffffff2a; padding: 8px 18px; max-width: 560px; }
+#mission-title { font-weight: 800; color: #ffd75e; letter-spacing: 1px; }
+#mission-text { font-size: 14px; color: #e8ecf2; margin-top: 2px; }
+#hud-bottom-left { position: absolute; left: 16px; bottom: 14px; }
+#speed { font-size: 26px; font-weight: 800; text-shadow: 0 2px 6px #000; }
+#hint { font-size: 13px; color: #dfe6f0; text-shadow: 0 1px 4px #000; }
+#toast { position: absolute; top: 24%; left: 50%; transform: translateX(-50%); font-size: 22px; font-weight: 800; color: #ffd75e; text-shadow: 0 2px 8px #000; opacity: 0; transition: opacity .3s; text-align: center; max-width: 700px; }
+
+#title-screen, #pause-screen, #end-screen { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(6, 10, 20, .62); }
+.panel { background: #101827f2; border: 1px solid #ffffff2e; padding: 28px 36px; max-width: 640px; text-align: center; color: #eef1f5; box-shadow: 0 20px 60px #000a; }
+.panel h1 { font-size: 56px; margin: 0; letter-spacing: 6px; color: #ffd75e; }
+.panel h2 { font-size: 36px; margin: 0 0 10px; color: #ffd75e; letter-spacing: 3px; }
+.tagline { color: #9fd8ff; font-weight: 600; margin: 6px 0 14px; }
+.story { line-height: 1.55; color: #d7dde8; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; margin: 16px 0; font-size: 14px; color: #c9d2e0; }
+button { pointer-events: auto; background: #ffd75e; color: #1a1405; border: 0; font-size: 18px; font-weight: 800; letter-spacing: 1px; padding: 12px 26px; margin: 6px 4px 0; cursor: pointer; }
+button:hover { background: #ffe08a; }
+.fine { font-size: 12px; color: #8b93a3; margin-top: 16px; }
